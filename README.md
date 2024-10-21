@@ -7,7 +7,7 @@
 1. Funcionalidad del juego: Recolecta la mayor cantidad de setas que puedas antes de que el tiempo se acabe. Si chocas contra un enemigo perderas una vida. 
 
 2. Diseño del juego (low-fi): Creado con figma falta subirlo al README.
-![low-fi desing](lowfi.png)
+![low-fi desing](./img/lowfi.png)
 
 3. Lista de tareas:
 Especificar todos los archivos que tendra el juego, y crear el area de juego. 
