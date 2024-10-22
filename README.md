@@ -13,8 +13,8 @@
 Especificar todos los archivos que tendra el juego, y crear el area de juego. 
 
 4. Organización de OOP:
-- Clases: Logica, Gamearea, Player, Enemies, Fungi
-- Métodos: Enemyattack();
+- Clases: Logica, Gamearea, Player, Enemy
+- Métodos:
 - Atributos
 5. Empezar a crear tu juego.
 
