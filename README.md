@@ -1,19 +1,22 @@
 # Fungi Finder 
 
-## Eres un aventurado recolector de setas se adentra a un bosque para encontrar las setas mas raras. Cuidado! Tienes que evitar encontrarte con las peligrosas criaturas del bosque.
+## Set off on a thrilling adventure as a daring mushroom collector, exploring a mysterious forest in search of rare fungi. But beware! If you collide with the dangerous creatures, it's game over.
 
-# Planificación 
+# Planification 
 
-1. Funcionalidad del juego: Recolecta la mayor cantidad de setas que puedas antes de que el tiempo se acabe. Si chocas contra un enemigo perderas una vida. 
+1. Instructions: 
 
-2. Diseño del juego (low-fi): Creado con figma falta subirlo al README.
+Your goal is to collect as many mushrooms as you can before time runs out. Be careful to avoid forest creatures—if you collide with them, you'll lose a life. Gather quickly and carefully to survive and win!
+
+2. Low-Fidelity:
 ![low-fi desing](./img/lowfi.png)
 
 3. Lista de tareas:
 Especificar todos los archivos que tendra el juego, y crear el area de juego. 
 
-4. Organización de OOP:
-- Clases: Logica, Gamearea, Player, Enemy
+4. OOP organization:
+
+- Classes: Logic, Gamea, Player, Enemy, Fungi
 - Métodos:
 - Atributos
 5. Empezar a crear tu juego.
