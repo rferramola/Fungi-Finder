@@ -17,7 +17,7 @@ document.addEventListener("keydown", (e) => {
       break;
     case "ArrowBottom":
     case "s":
-    case "S":   
+    case "S":
       player.direction = "bottom";
       break;
     default:
@@ -29,28 +29,28 @@ document.addEventListener("keyup", (e) => {
   switch (e.key) {
     case "ArrowLeft":
     case "a":
-    case "A":    
+    case "A":
       if (player.direction === "left") {
         player.direction = null;
       }
       break;
     case "ArrowRight":
     case "d":
-    case "D":    
+    case "D":
       if (player.direction === "right") {
         player.direction = null;
       }
       break;
     case "ArrowTop":
     case "w":
-    case "W":    
+    case "W":
       if (player.direction === "top") {
         player.direction = null;
       }
       break;
     case "ArrowBottom":
     case "s":
-    case "S":    
+    case "S":
       if (player.direction === "bottom") {
         player.direction = null;
       }
