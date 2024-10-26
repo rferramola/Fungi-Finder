@@ -12,7 +12,7 @@ class Fungus {
     this.positionLeft = Math.random() * (myGame.width - this.width);
     this.positionTop = Math.random() * (myGame.height - this.height);
 
-    this.element.style.position = "absolute";
+   
     this.element.style.left = this.positionLeft + "px";
     this.element.style.top = this.positionTop + "px";
 
@@ -28,6 +28,6 @@ class Fungus {
   }
 }
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
   new Fungus();
 }

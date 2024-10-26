@@ -11,12 +11,8 @@ class Enemy {
 
     this.positionLeft = Math.random() * (myGame.width - this.width);
     this.positionTop = Math.random() * (myGame.height - this.height);
-//cosas que agregue para tratar de realizar movimiento. 
-    this.velocity = 10;
-    this.direction = "right";
-    this.positionRight = null;
-
-    this.element.style.position = "absolute";
+    //cosas que agregue para tratar de realizar movimiento.
+    this.velocity = 2;
     this.element.style.left = this.positionLeft + "px";
     this.element.style.top = this.positionTop + "px";
 
@@ -30,14 +26,22 @@ class Enemy {
   getPositionBottom() {
     return this.element.getBoundingClientRect().bottom;
   }
-// intente incorporarlo pero no funciono
-  move(){
+
+  // 
+  move() {
+    this.positionLeft -= this.velocity;
+    // console.log(this.positionLeft);
     
+    if (this.positionLeft <= 0) {
+      this.positionLeft = myGame.width - this.width;
+      this.positionTop = Math.random() * (myGame.height - this.height);
+      this.element.style.top = this.positionTop + "px";
+    }
+
+    this.element.style.left = this.positionLeft + "px";
   }
 }
 
-for (let i = 0; i < 7; i++) {
-  new Enemy();
+for (let i = 0; i < 10; i++) {
+  new Enemy();  
 }
-
-const enemys = new Enemy();

@@ -1,5 +1,5 @@
-document.addEventListener("keydown", (e) => {
-  switch (e.key) {
+document.addEventListener("keydown", (event) => {
+  switch (event.key) {
     case "ArrowLeft":
     case "a":
     case "A":
@@ -10,12 +10,12 @@ document.addEventListener("keydown", (e) => {
     case "D":
       player.direction = "right";
       break;
-    case "ArrowTop":
+    case "ArrowUp":
     case "w":
     case "W":
       player.direction = "top";
       break;
-    case "ArrowBottom":
+    case "ArrowDown":
     case "s":
     case "S":
       player.direction = "bottom";
@@ -41,14 +41,14 @@ document.addEventListener("keyup", (e) => {
         player.direction = null;
       }
       break;
-    case "ArrowTop":
+    case "ArrowUp":
     case "w":
     case "W":
       if (player.direction === "top") {
         player.direction = null;
       }
       break;
-    case "ArrowBottom":
+    case "ArrowDown":
     case "s":
     case "S":
       if (player.direction === "bottom") {
@@ -64,6 +64,42 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
   frames++;
   player.move(player.direction);
+
+  Enemy.enemyArray.forEach((enemy) => enemy.move());
+
+  enemyCollision()
 }
 
 requestAnimationFrame(gameLoop);
+
+// add collision here.
+
+function enemyCollision() {
+  Enemy.enemyArray.forEach((enemy) => {
+    const enemyLeftEdge = enemy.getPositionLeft();
+    const enemyRightEdge = enemy.getPositionLeft() + enemy.width;
+    const enemyTopEdge = enemy.getPositionBottom() - enemy.height;
+    const enemyBottomEdge = enemy.getPositionBottom();
+
+
+
+   
+  });
+
+
+}
+
+function fungiCollision() {}
+
+
+const playerLeftEdge = player.getPositionLeft();
+    const playerRightEdge = player.getPositionLeft() + player.width;
+    const playerTopEdge = player.getPositionBottom() - player.height;
+    const platerBottomEdge = player.getPositionBottom();
+
+if( playerLeftEdge < enemyRightEdge && 
+  playerRightEdge > enemyLeftEdge && 
+  playerTopEdge < enemyBottomEdge && 
+  platerBottomEdge > enemyTopEdge) {
+    console.log("you are deeead!")
+  }

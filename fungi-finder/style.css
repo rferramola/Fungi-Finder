@@ -33,10 +33,12 @@ body {
   height: 40px;
   background-color: darkgoldenrod;
   background-size: cover;
+  position: absolute;
 }
 
 .enemy {
   width: 60px;
   height: 60px;
   background-color: brown;
+  position: absolute;
 }
