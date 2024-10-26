@@ -4,12 +4,13 @@ class Player {
     this.element.setAttribute("id", "player");
     myGame.element.appendChild(this.element);
 
+    /* this.top = 0; */
     this.positionLeft = 0;
     this.velocity = 10;
     this.direction = null;
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
-    this.positionBottom = myGame.height /2 - this.height /2;
+    this.positionTop = myGame.height /2 - this.height /2;
   }
 
   move(direction) {
@@ -24,19 +25,19 @@ class Player {
         this.positionLeft = myGame.width - this.width;
       }
     } else if (direction === "top") {
-      this.positionBottom -= this.velocity;
-      if (this.positionBottom <= 0) {
-        this.positionBottom = 0;
+      this.positionTop -= this.velocity;
+      if (this.positionTop <= 0) {
+        this.positionTop = 0;
       }
     } else if (direction === "bottom") {
-      this.positionBottom += this.velocity;
-      if (this.positionBottom >= myGame.height - this.height) {
-        this.positionBottom = myGame.height - this.height;
+      this.positionTop += this.velocity;
+      if (this.positionTop >= myGame.height - this.height) {
+        this.positionTop = myGame.height - this.height;
       }
     }
-     //console.log(this.positionLeft, this.positionBottom);
+     //console.log(this.positionLeft, this.positionTop);
     this.element.style.left = this.positionLeft + "px";
-    this.element.style.top = this.positionBottom + "px";
+    this.element.style.top = this.positionTop + "px";
   }
 }
 

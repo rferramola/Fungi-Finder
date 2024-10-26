@@ -67,7 +67,8 @@ function gameLoop() {
 
   Enemy.enemyArray.forEach((enemy) => enemy.move());
 
-  enemyCollision()
+  enemyCollision();
+  pickFungi();
 }
 
 requestAnimationFrame(gameLoop);
@@ -75,31 +76,50 @@ requestAnimationFrame(gameLoop);
 // add collision here.
 
 function enemyCollision() {
+  const playerLeftEdge = player.positionLeft;
+  const playerRightEdge = player.positionLeft + player.width;
+  const playerTopEdge = player.positionTop;
+  const playerBottomEdge = player.positionTop + player.height;
+
   Enemy.enemyArray.forEach((enemy) => {
-    const enemyLeftEdge = enemy.getPositionLeft();
-    const enemyRightEdge = enemy.getPositionLeft() + enemy.width;
-    const enemyTopEdge = enemy.getPositionBottom() - enemy.height;
-    const enemyBottomEdge = enemy.getPositionBottom();
+    const enemyLeftEdge = enemy.positionLeft;
+    const enemyRightEdge = enemy.positionLeft + enemy.width;
+    const enemyTopEdge = enemy.positionTop;
+    const enemyBottomEdge = enemy.positionTop + enemy.height;
 
-
-
-   
+    if (
+      playerLeftEdge < enemyRightEdge &&
+      playerRightEdge > enemyLeftEdge &&
+      playerTopEdge < enemyBottomEdge &&
+      playerBottomEdge > enemyTopEdge
+    ) {
+      console.log("you are deaaaad");
+    }
   });
-
-
 }
 
-function fungiCollision() {}
+function pickFungi() {
+  const playerLeftEdge = player.positionLeft;
+  const playerRightEdge = player.positionLeft + player.width;
+  const playerTopEdge = player.positionTop;
+  const playerBottomEdge = player.positionTop + player.height;
 
+  Fungus.fungusArray.forEach((fungi) => {
+    const fungiLeftEdge = fungi.positionLeft;
+    const fungiRightEdge = fungi.positionLeft + fungi.width;
+    const fungiTopEdge = fungi.positionTop;
+    const fungiBottomEdge = fungi.positionTop + fungi.height;
 
-const playerLeftEdge = player.getPositionLeft();
-    const playerRightEdge = player.getPositionLeft() + player.width;
-    const playerTopEdge = player.getPositionBottom() - player.height;
-    const platerBottomEdge = player.getPositionBottom();
+    if (
+      playerLeftEdge < fungiRightEdge &&
+      playerRightEdge > fungiLeftEdge &&
+      playerTopEdge < fungiBottomEdge &&
+      playerBottomEdge > fungiTopEdge
+    ) {
+      console.log("YOU GOT A MUSHROOM");
+      fungi.wrapFungi()
+    }
+  });
 
-if( playerLeftEdge < enemyRightEdge && 
-  playerRightEdge > enemyLeftEdge && 
-  playerTopEdge < enemyBottomEdge && 
-  platerBottomEdge > enemyTopEdge) {
-    console.log("you are deeead!")
-  }
+  
+}

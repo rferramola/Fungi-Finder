@@ -19,13 +19,13 @@ class Enemy {
     Enemy.enemyArray.push(this);
   }
 
-  getPositionLeft() {
+  /* getPositionLeft() {
     return this.element.getBoundingClientRect().left;
   }
 
-  getPositionBottom() {
-    return this.element.getBoundingClientRect().bottom;
-  }
+  getPositionTop() {
+    return this.element.getBoundingClientRect().top;
+  } */
 
   // 
   move() {
@@ -42,6 +42,6 @@ class Enemy {
   }
 }
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 7; i++) {
   new Enemy();  
 }
