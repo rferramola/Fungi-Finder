@@ -27,11 +27,11 @@ class Enemy {
     return this.element.getBoundingClientRect().top;
   } */
 
-  // 
+  //
   move() {
     this.positionLeft -= this.velocity;
     // console.log(this.positionLeft);
-    
+
     if (this.positionLeft <= 0) {
       this.positionLeft = myGame.width - this.width;
       this.positionTop = Math.random() * (myGame.height - this.height);
@@ -43,5 +43,5 @@ class Enemy {
 }
 
 for (let i = 0; i < 7; i++) {
-  new Enemy();  
+  new Enemy();
 }

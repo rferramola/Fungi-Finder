@@ -93,7 +93,8 @@ function enemyCollision() {
       playerTopEdge < enemyBottomEdge &&
       playerBottomEdge > enemyTopEdge
     ) {
-      console.log("you are deaaaad");
+      console.log("you are deaaaad")
+
     }
   });
 }
@@ -117,9 +118,8 @@ function pickFungi() {
       playerBottomEdge > fungiTopEdge
     ) {
       console.log("YOU GOT A MUSHROOM");
-      fungi.wrapFungi()
+      fungi.removeFungi();
+      new Fungus();
     }
   });
-
-  
 }

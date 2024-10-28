@@ -18,23 +18,18 @@ class Fungus {
     Fungus.fungusArray.push(this);
   }
 
-  wrapFungi() {
-    this.element.style.position = "relative";
-    this.element.style.top = -10000 + "px";
+  removeFungi() {
+    //this.element.style.position = "relative";
+    this.element.style.display = "none";// lo saca del DOM igual que el metodo remove(). 
+    //this.element.style.top = -10000 + "px";
     const fungiIndex = Fungus.fungusArray.indexOf(this);
 
     Fungus.fungusArray.splice(fungiIndex, 1);
-  };
-  // posiblemente esto de abajo no funciona, no rompe el codigo pero lo mantenemos por si acaso.
-  /*getPositionLeft() {
-    return this.element.getBoundingClientRect().left;
-  }
 
-  getPositionBottom() {
-    return this.element.getBoundingClientRect().bottom;
-  }*/
+  };
+ 
 }
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 2; i++) {
   new Fungus();
 }
