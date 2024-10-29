@@ -8,7 +8,28 @@ class Game {
     this.height = this.element.getBoundingClientRect().height;
     this.livesElement = document.querySelector("#lives");
   }
- 
+  looseLive() {
+    if (this.lives > 0) {
+      this.lives--;
+    }
+  }
 }
 
 const myGame = new Game();
+
+function time() {
+  const counterElement = document.querySelector("#counter");
+
+  let index = 40;
+
+  const myInterval = setInterval(() => {
+    index--;
+
+    if (index <= 0) {
+      clearInterval(myInterval);
+    }
+    counterElement.innerText = index;
+
+    console.log({ index });
+  }, 1000);
+}

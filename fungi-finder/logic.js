@@ -59,6 +59,7 @@ document.addEventListener("keyup", (e) => {
 });
 
 let frames = 0;
+time();
 
 function gameLoop() {
   requestAnimationFrame(gameLoop);
@@ -93,12 +94,16 @@ function enemyCollision() {
       playerTopEdge < enemyBottomEdge &&
       playerBottomEdge > enemyTopEdge
     ) {
-      console.log("you are deaaaad")
-
+      console.log("you are deaaaad", myGame.lives);
+      if (myGame.lives <= 0) {
+        console.log("game over");
+      }
+      myGame.looseLive();
     }
   });
 }
 
+const soundFungi = new Audio('sounds/fungi.mp3')
 function pickFungi() {
   const playerLeftEdge = player.positionLeft;
   const playerRightEdge = player.positionLeft + player.width;
@@ -118,6 +123,7 @@ function pickFungi() {
       playerBottomEdge > fungiTopEdge
     ) {
       console.log("YOU GOT A MUSHROOM");
+      soundFungi.play();
       fungi.removeFungi();
       new Fungus();
     }
