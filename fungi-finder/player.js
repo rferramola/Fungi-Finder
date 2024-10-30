@@ -10,7 +10,7 @@ class Player {
     this.direction = null;
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
-    this.positionTop = myGame.height /2 - this.height /2;
+    this.positionTop = myGame.height / 2 - this.height / 2;
   }
 
   move(direction) {
@@ -35,7 +35,7 @@ class Player {
         this.positionTop = myGame.height - this.height;
       }
     }
-     //console.log(this.positionLeft, this.positionTop);
+    //console.log(this.positionLeft, this.positionTop);
     this.element.style.left = this.positionLeft + "px";
     this.element.style.top = this.positionTop + "px";
   }

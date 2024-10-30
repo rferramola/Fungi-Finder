@@ -70,12 +70,15 @@ function gameLoop() {
 
   enemyCollision();
   pickFungi();
+  //const soundtrack = new Audio("sounds/sounds.mp3");
+  soundtrack.play();
 }
 
 requestAnimationFrame(gameLoop);
 
 // add collision here.
-
+const bearRoar = new Audio("sounds/bear.mp3");
+//soundtrack.play();
 function enemyCollision() {
   const playerLeftEdge = player.positionLeft;
   const playerRightEdge = player.positionLeft + player.width;
@@ -94,16 +97,25 @@ function enemyCollision() {
       playerTopEdge < enemyBottomEdge &&
       playerBottomEdge > enemyTopEdge
     ) {
-      console.log("you are deaaaad", myGame.lives);
-      if (myGame.lives <= 0) {
+      //prueba de vidas
+      if (myGame.lives > 0) {
+        myGame.looseLive();
+        bearRoar.play();
+        console.log("tester");
+      } else {
         console.log("game over");
       }
-      myGame.looseLive();
+      // console.log("you are deaaaad", myGame.lives);
+      //  if (myGame.lives <= 0) {
+      //  console.log("game over")
+      //  bearRoar.play();
+      //  }
+      // myGame.looseLive();
     }
   });
 }
 
-const soundFungi = new Audio('sounds/fungi.mp3')
+const soundFungi = new Audio("sounds/fungi.mp3");
 function pickFungi() {
   const playerLeftEdge = player.positionLeft;
   const playerRightEdge = player.positionLeft + player.width;
@@ -122,10 +134,14 @@ function pickFungi() {
       playerTopEdge < fungiBottomEdge &&
       playerBottomEdge > fungiTopEdge
     ) {
+
+      myGame.totalMushrooms++;
+      document.querySelector("#total-mushrooms").textContent = myGame.totalMushrooms;
       console.log("YOU GOT A MUSHROOM");
       soundFungi.play();
       fungi.removeFungi();
       new Fungus();
     }
+// tratando de hacer el score - total mushrooms
   });
 }

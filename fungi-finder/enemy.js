@@ -12,7 +12,7 @@ class Enemy {
     this.positionLeft = Math.random() * (myGame.width - this.width);
     this.positionTop = Math.random() * (myGame.height - this.height);
     //cosas que agregue para tratar de realizar movimiento.
-    this.velocity = 2;
+    this.velocity = 4;
     this.element.style.left = this.positionLeft + "px";
     this.element.style.top = this.positionTop + "px";
 
