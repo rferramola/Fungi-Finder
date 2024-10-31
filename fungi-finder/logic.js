@@ -100,17 +100,12 @@ function enemyCollision() {
       //prueba de vidas
       if (myGame.lives > 0) {
         myGame.looseLive();
+        enemy.removeEnemy();
         bearRoar.play();
-        console.log("tester");
       } else {
         console.log("game over");
+        myGame.element.remove();
       }
-      // console.log("you are deaaaad", myGame.lives);
-      //  if (myGame.lives <= 0) {
-      //  console.log("game over")
-      //  bearRoar.play();
-      //  }
-      // myGame.looseLive();
     }
   });
 }
@@ -134,14 +129,14 @@ function pickFungi() {
       playerTopEdge < fungiBottomEdge &&
       playerBottomEdge > fungiTopEdge
     ) {
-
       myGame.totalMushrooms++;
-      document.querySelector("#total-mushrooms").textContent = myGame.totalMushrooms;
+      document.querySelector("#total-mushrooms").textContent =
+        myGame.totalMushrooms;
       console.log("YOU GOT A MUSHROOM");
       soundFungi.play();
       fungi.removeFungi();
       new Fungus();
     }
-// tratando de hacer el score - total mushrooms
+    // tratando de hacer el score - total mushrooms
   });
 }

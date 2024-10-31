@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.started = false;
+    this.gameStarted = false;
     this.isGameOver = false;
     this.totalMushrooms = 0;
     this.lives = 3;
@@ -8,28 +8,31 @@ class Game {
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
     this.livesElement = document.querySelector("#lives");
+    this.updateLives();
   }
-  looseLive() {
-if(this.lives <= 0) {
-console.log(("this means you hace 0 lives"));
 
-} 
-  // if (this.lives > 0) {
-    //   this.lives--;
-    // }
+  looseLive() {
+    if (this.lives > 0) {
+      this.lives--;
+    }
+    this.updateLives();
   }
-  
+
+  updateLives() {
+    this.livesElement.innerText = "🧡".repeat(this.lives);
+  }
 
   startScreen() {
     const playButtom = document.querySelector("#play-buttom");
     const startScreen = document.querySelector("#principal-screen");
 
     playButtom.addEventListener("click", () => {
-      myGame.started = true;
+      myGame.gameStarted = true;
       startScreen.style.display = "none";
     });
   }
 }
+
 const myGame = new Game();
 
 //SONIDO DE FONDO
@@ -49,10 +52,11 @@ function time() {
       clearInterval(myInterval);
       youWin.style.display = "block";
       youWin.style.display = "flex";
+      const gameElement = document.querySelector("#game-area");
+      gameElement.remove();
     }
 
     counterElement.innerText = index;
 
-    //console.log({ index });
   }, 1000);
 }
