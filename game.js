@@ -68,6 +68,8 @@ function startTime() {
       youWin.style.display = "flex";
       const gameElement = document.querySelector("#game-area");
       gameElement.remove();
+      document.querySelector("#total-mushrooms").textContent =
+        "Mushrooms: " + myGame.totalMushrooms;
     }
 
     counterElement.innerText = index;
