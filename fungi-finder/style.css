@@ -27,16 +27,6 @@ body {
   z-index: 5;
 }
 
-#total-mushrooms {
-  position: absolute;
-  /*top: 25%;
-  right: 15%;*/
-  font-size: 2em;
-  color: rgb(255, 255, 255);
-  z-index: 4;
-  padding-top: 10px;
-}
-
 #play-button {
   position: absolute;
   bottom: 30%;
@@ -109,8 +99,11 @@ body {
 }
 
 #total-mushrooms{
+  position: relative;
+  display: flex;
+  z-index: 4;
   font-family: monospace;
-  font-size: 24px;
+  font-size: 20px;
   color: rgb(255, 255, 255);
   transform: unset;
   text-shadow: unset;
