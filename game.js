@@ -56,9 +56,9 @@ const soundtrack = new Audio("sounds/sounds.mp3");
 
 function startTime() {
   const counterElement = document.querySelector("#counter");
-  const youWin = document.querySelector("#you-win").textContent = "Remainig time: ";
+  const youWin = document.querySelector("#you-win");
 
-  let index = 40;
+  let index = 30;
 
   const myInterval = setInterval(() => {
     index--;
