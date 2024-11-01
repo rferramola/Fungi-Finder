@@ -22,24 +22,39 @@ class Game {
     this.livesElement.innerText = "🧡".repeat(this.lives);
   }
 
-  startScreen() {
-    const playButtom = document.querySelector("#play-buttom");
-    const startScreen = document.querySelector("#principal-screen");
+  startGame() {
+    const playButtom = document.querySelector("#play-button");
+    const restartButton = document.querySelector("#restart-button");
+    const principalScreen = document.querySelector("#principal-screen");
 
     playButtom.addEventListener("click", () => {
-      myGame.gameStarted = true;
-      startScreen.style.display = "none";
+      this.gameStarted = true;
+      principalScreen.style.display = "none";
     });
+
+    restartButton.addEventListener("click", () => {
+      location.reload();
+    });
+  }
+
+  gameOver() {
+    this.element.remove();
+    const gameOverScreen = document.querySelector("#you-lose");
+
+    this.isGameOver = true;
+    this.gameStarted = false;
+    gameOverScreen.style.display = "flex";
   }
 }
 
 const myGame = new Game();
+myGame.startGame();
 
-//SONIDO DE FONDO
+//SONIDO DE FONDO 
 const soundtrack = new Audio("sounds/sounds.mp3");
 //soundtrack.play();
 
-function time() {
+function startTime() {
   const counterElement = document.querySelector("#counter");
   const youWin = document.querySelector("#you-win");
 
@@ -50,13 +65,11 @@ function time() {
 
     if (index <= 0) {
       clearInterval(myInterval);
-      youWin.style.display = "block";
       youWin.style.display = "flex";
       const gameElement = document.querySelector("#game-area");
       gameElement.remove();
     }
 
     counterElement.innerText = index;
-
   }, 1000);
 }

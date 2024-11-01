@@ -18,14 +18,6 @@ class Enemy {
     Enemy.enemyArray.push(this);
   }
 
-  /* getPositionLeft() {
-    return this.element.getBoundingClientRect().left;
-  }
-
-  getPositionTop() {
-    return this.element.getBoundingClientRect().top;
-  } */
-
   removeEnemy() {
     this.element.remove();
     const enemyIndex = Enemy.enemyArray.indexOf(this);
@@ -43,10 +35,11 @@ class Enemy {
   }
 }
 
-setInterval(() => {
-  new Enemy();
-}, 1000);
-
+const createEnemies = () => {
+  setInterval(() => {
+    new Enemy();
+  }, 1000);
+};
 /*for (let i = 0; i < 7; i++) {
   new Enemy();
 }*/

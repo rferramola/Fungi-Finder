@@ -59,19 +59,30 @@ document.addEventListener("keyup", (e) => {
 });
 
 let frames = 0;
-time();
+
+
+let hasStartedGame = false;
 
 function gameLoop() {
   requestAnimationFrame(gameLoop);
-  frames++;
-  player.move(player.direction);
 
-  Enemy.enemyArray.forEach((enemy) => enemy.move());
+  if (myGame.gameStarted && !myGame.isGameOver) {
+    if (!hasStartedGame) {
+      createEnemies();
+      startTime();
+      hasStartedGame = true;
+    }
 
-  enemyCollision();
-  pickFungi();
-  //const soundtrack = new Audio("sounds/sounds.mp3");
-  soundtrack.play();
+    frames++;
+    player.move(player.direction);
+
+    Enemy.enemyArray.forEach((enemy) => enemy.move());
+
+    enemyCollision();
+    pickFungi();
+    //const soundtrack = new Audio("sounds/sounds.mp3");
+    soundtrack.play();
+  }
 }
 
 requestAnimationFrame(gameLoop);
@@ -98,13 +109,12 @@ function enemyCollision() {
       playerBottomEdge > enemyTopEdge
     ) {
       //prueba de vidas
-      if (myGame.lives > 0) {
+      if (myGame.lives > 1) {
         myGame.looseLive();
         enemy.removeEnemy();
         bearRoar.play();
       } else {
-        console.log("game over");
-        myGame.element.remove();
+        myGame.gameOver();
       }
     }
   });
@@ -131,12 +141,11 @@ function pickFungi() {
     ) {
       myGame.totalMushrooms++;
       document.querySelector("#total-mushrooms").textContent =
-        myGame.totalMushrooms;
+        "Mushrooms: " + myGame.totalMushrooms;
       console.log("YOU GOT A MUSHROOM");
       soundFungi.play();
       fungi.removeFungi();
       new Fungus();
     }
-    // tratando de hacer el score - total mushrooms
   });
 }

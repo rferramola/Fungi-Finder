@@ -11,24 +11,23 @@ body {
   height: 100vh;
   background-image: url(../img/autumn.jpg);
   background-size: cover;
-
 }
 
-/*#principal-screen {
+#principal-screen {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(182, 95, 9, 0.521);
+  background-color: rgba(212, 162, 36, 0.521);
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
   padding: 10em;
   gap: 2em;
-  z-index: 1;
-}*/
+  z-index: 5;
+}
 
-#total-mushrooms{
+#total-mushrooms {
   position: absolute;
   /*top: 25%;
   right: 15%;*/
@@ -40,8 +39,8 @@ body {
 
 #play-button {
   position: absolute;
-  bottom: 5%;
-  width: 10%;
+  bottom: 30%;
+  
   cursor: pointer;
   transition: 300ms;
   z-index: 7;
@@ -53,7 +52,6 @@ body {
   position: relative;
   background-color: rgba(2, 68, 70, 0.462);
   background-size: cover;
-
 }
 
 #player {
@@ -83,12 +81,12 @@ body {
   background-size: cover;
 }
 
-#lives{
+#lives {
   position: absolute;
   z-index: 0;
 }
 
-#you-win{
+.game-over {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,10 +108,18 @@ body {
     0 0 0.2em rgb(218, 170, 37);
 }
 
-/*#title{
+#total-mushrooms{
+  font-family: monospace;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  transform: unset;
+  text-shadow: unset;
+}
+
+#title {
   display: flex;
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
   z-index: 7;
   font-family: monospace;
@@ -130,5 +136,13 @@ body {
   backdrop-filter: blur(2px);
   text-shadow: 1px 1px 2px rgb(255, 140, 0), 0 0 1em rgb(255, 115, 115),
     0 0 0.2em rgb(218, 170, 37);
+}
 
-  }
+button {
+  color: #229091;
+  background: rgb(255 248 216);
+  border: solid 1px #229091;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bolder;
+}
