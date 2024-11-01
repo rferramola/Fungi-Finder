@@ -11,19 +11,16 @@ Your goal is to collect as many mushrooms as you can before time runs out. Be ca
 2. Low-Fidelity:
 ![low-fi desing](./img/lowfi.png)
 
-3. Lista de tareas:
-Especificar todos los archivos que tendra el juego, y crear el area de juego. 
 
-4. OOP organization:
+3. OOP organization:
 
-- Classes: Logic, Gamea, Player, Enemy, Fungi
-- Métodos:
-- Atributos
-5. Empezar a crear tu juego.
+- Classes: Logic, Game, Player, Enemy, Fungi
+- Methods: move(), looseLive(), updateLives(), startGame(), gameOver(), removeFungi(), removeEnemy(), 
 
-# Recomendaciones 
-- Usar chat GPT para planificar y organizar el juego. 
-- Usar Trello para planificar tareas.
-- Crea una rama para cada tarea. 
-
-# Recordar que hay que hacer dos commits por día!
+# Backlog
+- When the player goes left, he turns left.
+- Put a "try again" button on the "you win" screen.
+- When the game ends, remove it so that "you win" or "game over" does not appear overwritten.
+- The "time remainig" is not removed when starting the game.
+- Update low-fidelity.
+- Put game instructions on the main screen.
