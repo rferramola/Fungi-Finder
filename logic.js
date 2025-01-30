@@ -60,7 +60,6 @@ document.addEventListener("keyup", (e) => {
 
 let frames = 0;
 
-
 let hasStartedGame = false;
 
 function gameLoop() {
@@ -82,7 +81,7 @@ function gameLoop() {
     pickFungi();
     //const soundtrack = new Audio("sounds/sounds.mp3");
     soundtrack.play();
-  }
+  } 
 }
 
 requestAnimationFrame(gameLoop);

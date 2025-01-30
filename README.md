@@ -24,3 +24,4 @@ Your goal is to collect as many mushrooms as you can before time runs out. Be ca
 - The "time remainig" is not removed when starting the game.
 - Update low-fidelity.
 - Put game instructions on the main screen.
+- Add levels to the game.

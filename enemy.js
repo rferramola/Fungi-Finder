@@ -11,7 +11,7 @@ class Enemy {
     this.positionLeft = myGame.width - 100;
     this.positionTop = Math.random() * (myGame.height - this.height);
     //cosas que agregue para tratar de realizar movimiento.
-    this.velocity = 4;
+    this.velocity = 2;
     this.element.style.left = this.positionLeft + "px";
     this.element.style.top = this.positionTop + "px";
 
@@ -38,7 +38,7 @@ class Enemy {
 const createEnemies = () => {
   setInterval(() => {
     new Enemy();
-  }, 1000);
+  }, 1500);
 };
 /*for (let i = 0; i < 7; i++) {
   new Enemy();
